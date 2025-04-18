@@ -316,9 +316,9 @@ const ContactPage = () => {
   
   const teamMembers = [
     {
-      name: "Selma BETA",
+      name: "Selma Bettaieb",
       role: "Founder & Lead Developer",
-      bio: "AI researcher and software engineer passionate about sustainable technology and applying AI for climate solutions.",
+      bio: "Software engineer passionate about sustainable technology and applying AI for climate solutions.",
       avatar: (
         <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
           <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
@@ -327,54 +327,12 @@ const ContactPage = () => {
       ),
       socials: {
         github: "https://github.com/sambett",
-        linkedin: "https://linkedin.com/in/selma-beta"
+        linkedin: "https://www.linkedin.com/in/sambett/"
       }
     },
-    {
-      name: "Raya Mahima",
-      role: "Environmental Research",
-      bio: "Climate scientist specializing in environmental impact assessment for digital technologies.",
-      avatar: (
-        <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-          <circle cx="12" cy="7" r="4"></circle>
-        </svg>
-      ),
-      socials: {
-        github: "https://github.com/",
-        linkedin: "https://linkedin.com/in/"
-      }
-    },
-    {
-      name: "Alex Chen",
-      role: "AI Engineer",
-      bio: "Machine learning engineer specializing in optimization algorithms and energy-efficient models.",
-      avatar: (
-        <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-          <circle cx="12" cy="7" r="4"></circle>
-        </svg>
-      ),
-      socials: {
-        github: "https://github.com/",
-        linkedin: "https://linkedin.com/in/"
-      }
-    },
-    {
-      name: "Sarah Williams",
-      role: "Frontend Developer",
-      bio: "UI/UX designer with a focus on creating intuitive, energy-efficient interfaces and sustainable design systems.",
-      avatar: (
-        <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-          <circle cx="12" cy="7" r="4"></circle>
-        </svg>
-      ),
-      socials: {
-        github: "https://github.com/",
-        linkedin: "https://linkedin.com/in/"
-      }
-    }
+
+
+
   ];
   
   return (
