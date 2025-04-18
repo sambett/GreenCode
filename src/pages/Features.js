@@ -143,20 +143,20 @@ const FeaturesPage = () => {
         </FeatureHeader>
         <FeatureContent>
           <Paragraph>
-            Greencode AI analyzes your code and suggests optimizations that reduce energy consumption without sacrificing functionality. Our system is powered by <Bold>StarCoder</Bold>, a state-of-the-art open-source code model with 15.5 billion parameters and an 8,000-token context window.
+            Greencode AI analyzes your code and suggests optimizations that reduce energy consumption without sacrificing functionality. Our system is powered by <Bold><a href="https://huggingface.co/bigcode/starcoder" target="_blank" rel="noopener noreferrer">StarCoder</a></Bold>, a state-of-the-art open-source code model with 15.5 billion parameters and an 8,000-token context window, capable of understanding and generating code in over 80 programming languages.
           </Paragraph>
           <Paragraph>
             <Bold>Key capabilities:</Bold>
           </Paragraph>
           <FeatureList>
-            <FeatureItem>Identifies energy-intensive code patterns and algorithms</FeatureItem>
-            <FeatureItem>Suggests more efficient alternatives based on best practices</FeatureItem>
-            <FeatureItem>Preserves functionality while reducing computational overhead</FeatureItem>
-            <FeatureItem>Handles over 80 programming languages (with best support for Python, JavaScript, Java, and C/C++)</FeatureItem>
-            <FeatureItem>Generates complete, ready-to-use optimized code</FeatureItem>
+            <FeatureItem>Identifies energy-intensive code patterns and algorithms using both AI and pattern analysis</FeatureItem>
+            <FeatureItem>Suggests more efficient alternatives based on green software engineering principles</FeatureItem>
+            <FeatureItem>Preserves functionality while reducing computational overhead and energy usage</FeatureItem>
+            <FeatureItem>Handles multiple programming languages (with best support for Python, JavaScript, Java, and C/C++)</FeatureItem>
+            <FeatureItem>Generates complete, ready-to-use optimized code with explanations of improvements</FeatureItem>
           </FeatureList>
           <Paragraph>
-            Unlike black-box AI tools, Greencode's suggestions are transparent and educational, helping you understand <em>why</em> certain patterns are more efficient.
+            Unlike black-box AI tools, Greencode's suggestions are transparent and educational, helping you understand <em>why</em> certain patterns are more efficient and teaching you to write more sustainable code from the start.
           </Paragraph>
         </FeatureContent>
       </FeatureSection>
@@ -178,17 +178,17 @@ const FeaturesPage = () => {
         </FeatureHeader>
         <FeatureContent>
           <Paragraph>
-            See the real environmental impact of your code optimizations with built-in sustainability metrics:
+            See the real environmental impact of your code optimizations with detailed sustainability metrics and visualizations based on advanced pattern detection and complexity analysis:
           </Paragraph>
           <FeatureList>
-            <FeatureItem><Bold>Energy savings</Bold> in joules per execution</FeatureItem>
-            <FeatureItem><Bold>CO₂ emissions reduced</Bold> in grams</FeatureItem>
-            <FeatureItem><Bold>GreenScore™</Bold> rating system for quick assessment</FeatureItem>
-            <FeatureItem><Bold>Comparison view</Bold> between original and optimized code</FeatureItem>
-            <FeatureItem><Bold>Optimization variants</Bold> showing trade-offs between speed and energy efficiency</FeatureItem>
+            <FeatureItem><Bold>Energy savings</Bold> in joules per execution with intuitive visual comparisons</FeatureItem>
+            <FeatureItem><Bold>CO₂ emissions reduced</Bold> in grams, helping you understand your climate impact</FeatureItem>
+            <FeatureItem><Bold>GreenScore™</Bold> rating system for quick assessment of code sustainability</FeatureItem>
+            <FeatureItem><Bold>Side-by-side comparison</Bold> between original and optimized code with highlighted improvements</FeatureItem>
+            <FeatureItem><Bold>Detailed optimization breakdowns</Bold> showing specific efficiency gains in your code</FeatureItem>
           </FeatureList>
           <Paragraph>
-            These metrics help quantify the benefits of your optimizations and provide tangible evidence of environmental impact reduction.
+            Our metrics use a combination of pattern-based heuristics, AST (Abstract Syntax Tree) analysis, and algorithmic complexity evaluation to estimate energy consumption without requiring specialized hardware measurements. This makes energy awareness accessible to all developers in their daily workflow.
           </Paragraph>
         </FeatureContent>
       </FeatureSection>
@@ -209,16 +209,19 @@ const FeaturesPage = () => {
         </FeatureHeader>
         <FeatureContent>
           <Paragraph>
-            We believe in transparent AI that developers can trust:
+            We believe in transparent AI that developers can trust, with full openness about how our system works:
           </Paragraph>
           <FeatureList>
-            <FeatureItem><Bold>Open-source foundation</Bold>: Built on StarCoder, with fully documented training data and processes</FeatureItem>
+            <FeatureItem><Bold>Open-source foundation</Bold>: Built on <a href="https://huggingface.co/bigcode/starcoder" target="_blank" rel="noopener noreferrer">StarCoder</a>, a fully transparent model with documented training data</FeatureItem>
             <FeatureItem><Bold>Explainable suggestions</Bold>: Clear explanations of why certain patterns are more efficient</FeatureItem>
-            <FeatureItem><Bold>Attribution capabilities</Bold>: Trace model outputs back to their training sources</FeatureItem>
+            <FeatureItem><Bold>Research-backed advice</Bold>: Recommendations grounded in green software engineering principles</FeatureItem>
             <FeatureItem><Bold>Ethical license</Bold>: Aligns with responsible AI principles under the BigCode OpenRAIL-M license</FeatureItem>
-            <FeatureItem><Bold>Privacy-first</Bold>: Can be self-hosted to keep sensitive code in your environment</FeatureItem>
-            <FeatureItem><Bold>No black boxes</Bold>: Complete visibility into how our AI works</FeatureItem>
+            <FeatureItem><Bold>Privacy-focused approach</Bold>: Can be deployed locally to keep sensitive code in your environment</FeatureItem>
+            <FeatureItem><Bold>No black boxes</Bold>: Complete visibility into the optimization process and suggestions</FeatureItem>
           </FeatureList>
+          <Paragraph>
+            By using open-source models instead of closed proprietary systems, we ensure that our tool's behavior is transparent, auditable, and ethically aligned with the needs of the developer community.
+          </Paragraph>
         </FeatureContent>
       </FeatureSection>
       
@@ -238,15 +241,18 @@ const FeaturesPage = () => {
         </FeatureHeader>
         <FeatureContent>
           <Paragraph>
-            Greencode AI doesn't just optimize your code—it helps you become a more sustainable developer:
+            Greencode AI doesn't just optimize your code—it helps you become a more sustainable developer with educational resources and insights:
           </Paragraph>
           <FeatureList>
-            <FeatureItem><Bold>Sustainable coding tips</Bold> integrated into the interface</FeatureItem>
-            <FeatureItem><Bold>Pattern explanations</Bold> that teach you why certain approaches are more efficient</FeatureItem>
-            <FeatureItem><Bold>Best practice suggestions</Bold> based on green software engineering principles</FeatureItem>
-            <FeatureItem><Bold>Links to research papers</Bold> and technical documentation</FeatureItem>
-            <FeatureItem><Bold>Performance vs. sustainability trade-off analyses</Bold></FeatureItem>
+            <FeatureItem><Bold>Sustainable coding tips</Bold> integrated into the interface for continuous learning</FeatureItem>
+            <FeatureItem><Bold>Pattern explanations</Bold> that teach you why certain approaches are more energy-efficient</FeatureItem>
+            <FeatureItem><Bold>Best practice suggestions</Bold> based on <a href="https://greensoftware.foundation/" target="_blank" rel="noopener noreferrer">Green Software Foundation</a> principles</FeatureItem>
+            <FeatureItem><Bold>Links to research papers</Bold> including the <a href="https://arxiv.org/abs/1907.10597" target="_blank" rel="noopener noreferrer">Green AI paper</a> and related resources</FeatureItem>
+            <FeatureItem><Bold>Practical optimization techniques</Bold> you can apply to future projects</FeatureItem>
           </FeatureList>
+          <Paragraph>
+            Our goal is not just to fix your code now, but to teach you how to write more sustainable software from the beginning. With every optimization, you'll learn principles you can apply across all your development work.
+          </Paragraph>
         </FeatureContent>
       </FeatureSection>
       
@@ -268,15 +274,18 @@ const FeaturesPage = () => {
         </FeatureHeader>
         <FeatureContent>
           <Paragraph>
-            Understand the trade-offs between optimization goals with our dual-variant system:
+            Understand the trade-offs between optimization goals with our intelligent multi-variant optimization system:
           </Paragraph>
           <FeatureList>
             <FeatureItem><Bold>Speed-optimized version</Bold>: Prioritizes execution time while still improving energy usage</FeatureItem>
             <FeatureItem><Bold>Energy-optimized version</Bold>: Maximizes energy efficiency, potentially with modest performance trade-offs</FeatureItem>
-            <FeatureItem><Bold>Side-by-side comparison</Bold>: View both versions and choose based on your priority</FeatureItem>
-            <FeatureItem><Bold>Detailed metrics</Bold>: See exact measurements for each variant</FeatureItem>
-            <FeatureItem><Bold>Recommendation engine</Bold>: Get suggestions on which variant is best for your specific use case</FeatureItem>
+            <FeatureItem><Bold>Side-by-side comparison</Bold>: View both versions in our detailed comparison UI</FeatureItem>
+            <FeatureItem><Bold>Trade-off analysis</Bold>: Clear explanations of the performance vs. sustainability balance</FeatureItem>
+            <FeatureItem><Bold>Recommendation engine</Bold>: AI-powered suggestions on which variant best suits your specific use case</FeatureItem>
           </FeatureList>
+          <Paragraph>
+            This feature helps developers make informed decisions about which optimizations to apply based on their project's specific requirements and sustainability goals. You don't have to choose between performance and sustainability blindly.
+          </Paragraph>
         </FeatureContent>
       </FeatureSection>
       
@@ -288,22 +297,25 @@ const FeaturesPage = () => {
         <FeatureHeader>
           <FeatureIcon>
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
             </svg>
           </FeatureIcon>
-          <FeatureTitle>Efficiency Patterns Library</FeatureTitle>
+          <FeatureTitle>Multi-Layered Analysis Engine</FeatureTitle>
         </FeatureHeader>
         <FeatureContent>
           <Paragraph>
-            Benefit from a growing library of recognized efficiency patterns:
+            GreenCode AI uses a comprehensive, multi-layered approach to analyze and optimize code:
           </Paragraph>
           <FeatureList>
-            <FeatureItem><Bold>Algorithmic optimizations</Bold>: Lower computational complexity alternatives</FeatureItem>
-            <FeatureItem><Bold>Memory usage improvements</Bold>: Reduced allocation and garbage collection</FeatureItem>
-            <FeatureItem><Bold>I/O and networking efficiency</Bold>: Minimized data transfer and storage</FeatureItem>
-            <FeatureItem><Bold>Concurrency optimizations</Bold>: Better utilization of multi-core processors</FeatureItem>
-            <FeatureItem><Bold>Language-specific patterns</Bold>: Optimizations tailored to each programming language</FeatureItem>
+            <FeatureItem><Bold>Pattern detection</Bold>: Identifies common inefficient patterns in code such as nested loops, manual summation, and redundant calculations</FeatureItem>
+            <FeatureItem><Bold>Algorithmic complexity</Bold>: Evaluates O(n) time and space complexity to understand computational intensity</FeatureItem>
+            <FeatureItem><Bold>Heuristic estimation</Bold>: Uses research-based heuristics to quantify energy usage without direct measurement</FeatureItem>
+            <FeatureItem><Bold>AST parsing</Bold>: Examines code structure at the syntax tree level for deeper optimization opportunities</FeatureItem>
+            <FeatureItem><Bold>AI optimization</Bold>: Uses StarCoder to intelligently apply green software engineering principles</FeatureItem>
           </FeatureList>
+          <Paragraph>
+            This layered approach ensures reliable optimization suggestions even when the AI model encounters unfamiliar code patterns. Our fallback mechanisms ensure you always get helpful sustainability insights.
+          </Paragraph>
         </FeatureContent>
       </FeatureSection>
       
@@ -311,6 +323,71 @@ const FeaturesPage = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.8 }}
+      >
+        <FeatureHeader>
+          <FeatureIcon>
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+              <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+              <line x1="6" y1="6" x2="6.01" y2="6"></line>
+              <line x1="6" y1="18" x2="6.01" y2="18"></line>
+            </svg>
+          </FeatureIcon>
+          <FeatureTitle>CodeCarbon Integration</FeatureTitle>
+        </FeatureHeader>
+        <FeatureContent>
+          <Paragraph>
+            GreenCode AI leverages the powerful CodeCarbon tracking library to provide accurate emissions measurement for your applications:
+          </Paragraph>
+          <FeatureList>
+            <FeatureItem><Bold>Real-time emissions tracking</Bold>: Monitor CO₂ emissions during code execution with precision</FeatureItem>
+            <FeatureItem><Bold>Hardware-aware measurements</Bold>: Account for CPU, GPU, RAM, and other hardware components</FeatureItem>
+            <FeatureItem><Bold>Location-based calculations</Bold>: Factor in regional energy grid carbon intensity</FeatureItem>
+            <FeatureItem><Bold>Detailed reporting</Bold>: Generate comprehensive reports on energy usage and carbon footprint</FeatureItem>
+            <FeatureItem><Bold>Seamless integration</Bold>: Minimal codebase changes needed to implement tracking</FeatureItem>
+          </FeatureList>
+          <Paragraph>
+            By integrating with CodeCarbon, we provide scientifically-backed metrics that give you confidence in your sustainability improvements. The library was developed by researchers from Mila, BCG GAMMA, Haverford College, and Comet.ml to help ML practitioners and software developers measure the carbon footprint of their code.
+          </Paragraph>
+        </FeatureContent>
+      </FeatureSection>
+      
+      <FeatureSection
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.9 }}
+      >
+        <FeatureHeader>
+          <FeatureIcon>
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+          </FeatureIcon>
+          <FeatureTitle>Aligned with Green Software Principles</FeatureTitle>
+        </FeatureHeader>
+        <FeatureContent>
+          <Paragraph>
+            GreenCode AI implements the eight principles of Green Software Engineering established by the <a href="https://greensoftware.foundation/" target="_blank" rel="noopener noreferrer">Green Software Foundation</a>:
+          </Paragraph>
+          <FeatureList>
+            <FeatureItem><Bold>Carbon Efficiency</Bold>: Doing the same work with less carbon-intensive operations</FeatureItem>
+            <FeatureItem><Bold>Energy Efficiency</Bold>: Using the least amount of energy to perform a function</FeatureItem>
+            <FeatureItem><Bold>Carbon Awareness</Bold>: Considering the carbon intensity of energy sources</FeatureItem>
+            <FeatureItem><Bold>Energy Proportionality</Bold>: Maximizing the useful work done per unit of energy</FeatureItem>
+            <FeatureItem><Bold>Network Efficiency</Bold>: Reducing data movement to minimize energy consumption</FeatureItem>
+            <FeatureItem><Bold>Measurement & Optimization</Bold>: Continuous monitoring and improvement of carbon footprint</FeatureItem>
+          </FeatureList>
+          <Paragraph>
+            By embodying these principles, GreenCode AI helps translate academic sustainability research into practical, everyday actions for developers. Our suggestions are grounded in peer-reviewed research and industry best practices.
+          </Paragraph>
+        </FeatureContent>
+      </FeatureSection>
+      
+      <FeatureSection
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 1.0 }}
       >
         <ComingSoonBadge>Coming Soon</ComingSoonBadge>
         <FeatureHeader>
