@@ -1,0 +1,10 @@
+{
+    "env": {
+      "NODE_OPTIONS": "--openssl-legacy-provider"
+    },
+    "build": {
+      "env": {
+        "NODE_OPTIONS": "--openssl-legacy-provider"
+      }
+    }
+  }
