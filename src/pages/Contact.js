@@ -552,7 +552,7 @@ const ContactPage = () => {
               <ListItem>Research collaborations on energy efficiency</ListItem>
               <ListItem>Educational initiatives and workshops</ListItem>
             </List>
-            <ContactLink href="mailto:greencode.ai.team@gmail.com?subject=Partnership%20Inquiry">Contact for Partnerships →</ContactLink>
+            <ContactLink href="mailto:sbettaie56@gmail.com?subject=Partnership%20Inquiry">Contact for Partnerships →</ContactLink>
           </ContributionCard>
           
           <ContributionCard
