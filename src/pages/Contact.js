@@ -209,6 +209,81 @@ const ListItem = styled.li`
   line-height: 1.6;
 `;
 
+const TeamSection = styled(motion.div)`
+  margin-top: 60px;
+`;
+
+const TeamGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+`;
+
+const TeamMemberCard = styled(motion.div)`
+  background: white;
+  border-radius: var(--border-radius);
+  padding: 25px;
+  box-shadow: var(--card-shadow);
+  text-align: center;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--hover-shadow);
+  }
+`;
+
+const MemberAvatar = styled.div`
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: var(--primary-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 15px;
+  overflow: hidden;
+  
+  svg {
+    width: 50px;
+    height: 50px;
+    color: var(--primary);
+  }
+`;
+
+const MemberName = styled.h4`
+  font-size: 18px;
+  margin-bottom: 5px;
+  color: var(--dark);
+  font-weight: 600;
+`;
+
+const MemberRole = styled.p`
+  color: var(--primary);
+  font-weight: 500;
+  margin-bottom: 10px;
+`;
+
+const MemberBio = styled.p`
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 15px;
+`;
+
+const SocialLinks = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+`;
+
+const SocialLink = styled.a`
+  color: #666;
+  
+  &:hover {
+    color: var(--primary);
+  }
+`;
+
 const ContactPage = () => {
   const formVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -238,6 +313,69 @@ const ContactPage = () => {
       }
     }
   };
+  
+  const teamMembers = [
+    {
+      name: "Selma BETA",
+      role: "Founder & Lead Developer",
+      bio: "AI researcher and software engineer passionate about sustainable technology and applying AI for climate solutions.",
+      avatar: (
+        <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+          <circle cx="12" cy="7" r="4"></circle>
+        </svg>
+      ),
+      socials: {
+        github: "https://github.com/sambett",
+        linkedin: "https://linkedin.com/in/selma-beta"
+      }
+    },
+    {
+      name: "Raya Mahima",
+      role: "Environmental Research",
+      bio: "Climate scientist specializing in environmental impact assessment for digital technologies.",
+      avatar: (
+        <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+          <circle cx="12" cy="7" r="4"></circle>
+        </svg>
+      ),
+      socials: {
+        github: "https://github.com/",
+        linkedin: "https://linkedin.com/in/"
+      }
+    },
+    {
+      name: "Alex Chen",
+      role: "AI Engineer",
+      bio: "Machine learning engineer specializing in optimization algorithms and energy-efficient models.",
+      avatar: (
+        <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+          <circle cx="12" cy="7" r="4"></circle>
+        </svg>
+      ),
+      socials: {
+        github: "https://github.com/",
+        linkedin: "https://linkedin.com/in/"
+      }
+    },
+    {
+      name: "Sarah Williams",
+      role: "Frontend Developer",
+      bio: "UI/UX designer with a focus on creating intuitive, energy-efficient interfaces and sustainable design systems.",
+      avatar: (
+        <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+          <circle cx="12" cy="7" r="4"></circle>
+        </svg>
+      ),
+      socials: {
+        github: "https://github.com/",
+        linkedin: "https://linkedin.com/in/"
+      }
+    }
+  ];
   
   return (
     <ContactContainer>
@@ -318,7 +456,7 @@ const ContactPage = () => {
           </IconWrapper>
           <InfoTitle>Email Us</InfoTitle>
           <InfoText>Have questions or feedback? Reach out directly to our team.</InfoText>
-          <ContactLink href="mailto:sbettaie56@gmail.com">sbettaie56@gmail.com</ContactLink>
+          <ContactLink href="mailto:greencode.ai.team@gmail.com">greencode.ai.team@gmail.com</ContactLink>
         </InfoCard>
         
         <InfoCard
@@ -358,6 +496,50 @@ const ContactPage = () => {
           </div>
         </InfoCard>
       </ContactInfo>
+      
+      <TeamSection
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
+        <SectionTitle>Meet Our Team</SectionTitle>
+        <Paragraph>
+          GreenCode AI is led by a diverse team of experts in AI, environmental science, software engineering, and sustainable design. Together, we're working to make computing greener and more energy-efficient.
+        </Paragraph>
+        
+        <TeamGrid>
+          {teamMembers.map((member, index) => (
+            <TeamMemberCard 
+              key={index}
+              variants={formVariants}
+              initial="hidden"
+              animate="visible"
+              transition={{ delay: 0.1 * index }}
+            >
+              <MemberAvatar>
+                {member.avatar}
+              </MemberAvatar>
+              <MemberName>{member.name}</MemberName>
+              <MemberRole>{member.role}</MemberRole>
+              <MemberBio>{member.bio}</MemberBio>
+              <SocialLinks>
+                <SocialLink href={member.socials.github} target="_blank" rel="noopener noreferrer">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                  </svg>
+                </SocialLink>
+                <SocialLink href={member.socials.linkedin} target="_blank" rel="noopener noreferrer">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                    <rect x="2" y="9" width="4" height="12"></rect>
+                    <circle cx="4" cy="4" r="2"></circle>
+                  </svg>
+                </SocialLink>
+              </SocialLinks>
+            </TeamMemberCard>
+          ))}
+        </TeamGrid>
+      </TeamSection>
       
       <CommunitySection
         variants={containerVariants}
@@ -412,7 +594,7 @@ const ContactPage = () => {
               <ListItem>Research collaborations on energy efficiency</ListItem>
               <ListItem>Educational initiatives and workshops</ListItem>
             </List>
-            <ContactLink href="mailto:sbettaie56@gmail.com?subject=Partnership%20Inquiry">Contact for Partnerships →</ContactLink>
+            <ContactLink href="mailto:greencode.ai.team@gmail.com?subject=Partnership%20Inquiry">Contact for Partnerships →</ContactLink>
           </ContributionCard>
           
           <ContributionCard
@@ -433,7 +615,7 @@ const ContactPage = () => {
               <ListItem>Write articles or blog posts about sustainability</ListItem>
               <ListItem>Advocate for green coding in your organization</ListItem>
             </List>
-            <ContactLink href="/resources">Access Advocacy Resources →</ContactLink>
+            <ContactLink href="/learn-more">Access Advocacy Resources →</ContactLink>
           </ContributionCard>
         </ContributionCards>
       </CommunitySection>

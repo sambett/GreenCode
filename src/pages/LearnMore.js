@@ -3,9 +3,26 @@ import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
 const LearnMoreContainer = styled.div`
-  max-width: 900px;
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: 40px 20px 80px;
+`;
+
+const PageTitle = styled(motion.h1)`
+  font-size: 42px;
+  font-weight: 800;
+  color: var(--dark);
+  text-align: center;
+  margin-bottom: 20px;
+`;
+
+const PageDescription = styled(motion.p)`
+  font-size: 18px;
+  text-align: center;
+  color: #555;
+  max-width: 800px;
+  margin: 0 auto 60px;
+  line-height: 1.6;
 `;
 
 const SectionTitle = styled(motion.h2)`
@@ -29,41 +46,22 @@ const SectionTitle = styled(motion.h2)`
   }
 `;
 
-const SubsectionTitle = styled(motion.h3)`
-  font-size: 24px;
-  margin-bottom: 16px;
-  margin-top: 30px;
-  color: var(--dark);
-  font-weight: 600;
-`;
-
-const Paragraph = styled(motion.p)`
-  margin-bottom: 24px;
-  font-size: 16px;
-  line-height: 1.8;
-  color: #4a4a4a;
-`;
-
-const Highlight = styled.span`
-  font-weight: 600;
-  color: var(--primary-dark);
-`;
-
-const Bold = styled.strong`
-  font-weight: 600;
-`;
-
-const SectionContainer = styled(motion.div)`
+const ResourcesGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
   margin-bottom: 60px;
 `;
 
 const ResourceCard = styled(motion.div)`
   background-color: white;
   border-radius: var(--border-radius);
-  padding: 25px;
-  margin-bottom: 20px;
   box-shadow: var(--card-shadow);
+  overflow: hidden;
   transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
   
   &:hover {
     transform: translateY(-5px);
@@ -71,378 +69,402 @@ const ResourceCard = styled(motion.div)`
   }
 `;
 
-const ResourceLink = styled.a`
-  text-decoration: none;
-  color: inherit;
-  display: block;
-`;
-
-const ResourceTitle = styled.h4`
-  font-size: 20px;
-  color: var(--primary-dark);
-  margin-bottom: 10px;
+const ResourceImage = styled.div`
+  height: 160px;
+  overflow: hidden;
+  position: relative;
+  background-color: var(--primary-light);
   display: flex;
   align-items: center;
-  gap: 10px;
+  justify-content: center;
+  color: var(--primary);
+  font-size: 40px;
+`;
+
+const ResourceContent = styled.div`
+  padding: 25px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+`;
+
+const ResourceTitle = styled.h3`
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: 15px;
 `;
 
 const ResourceDescription = styled.p`
-  color: #666;
-  margin-bottom: 15px;
+  font-size: 16px;
   line-height: 1.6;
+  color: #555;
+  margin-bottom: 20px;
+  flex-grow: 1;
 `;
 
-const ResourceMeta = styled.div`
+const ResourceLink = styled.a`
+  display: inline-block;
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+  }
+`;
+
+const FAQ = styled.div`
+  margin-top: 40px;
+`;
+
+const FAQItem = styled(motion.div)`
+  margin-bottom: 20px;
+  border-radius: var(--border-radius);
+  background-color: white;
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+`;
+
+const FAQQuestion = styled.div`
+  padding: 20px 25px;
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--dark);
+  cursor: pointer;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  font-size: 14px;
-  color: #888;
+  align-items: center;
+  
+  &:hover {
+    background-color: rgba(46, 204, 113, 0.05);
+  }
 `;
 
-const ResourceTags = styled.div`
-  display: flex;
-  gap: 8px;
+const FAQAnswer = styled(motion.div)`
+  padding: 0 25px;
+  overflow: hidden;
+  
+  p {
+    padding-bottom: 20px;
+    line-height: 1.7;
+  }
 `;
 
-const ResourceTag = styled.span`
-  background-color: var(--primary-light);
-  color: var(--primary-dark);
-  padding: 3px 8px;
-  border-radius: 12px;
-  font-size: 12px;
+const ResearchSection = styled.div`
+  margin-top: 60px;
 `;
 
-const Quote = styled.blockquote`
-  font-style: italic;
-  border-left: 4px solid var(--primary-light);
-  padding: 15px 20px;
-  margin: 25px 0;
-  background-color: #f9f9f9;
-  border-radius: 0 8px 8px 0;
+const Paper = styled(motion.div)`
+  background-color: white;
+  border-radius: var(--border-radius);
+  padding: 25px;
+  box-shadow: var(--card-shadow);
+  margin-bottom: 30px;
+  
+  &:hover {
+    box-shadow: var(--hover-shadow);
+    transform: translateY(-3px);
+  }
 `;
 
-const Figure = styled.figure`
-  margin: 30px 0;
-  text-align: center;
-`;
-
-const FigureImage = styled.img`
-  max-width: 100%;
-  border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-`;
-
-const FigureCaption = styled.figcaption`
-  margin-top: 10px;
-  font-size: 14px;
-  color: #666;
-  font-style: italic;
-`;
-
-const List = styled.ul`
-  margin-bottom: 24px;
-  padding-left: 20px;
-`;
-
-const ListItem = styled.li`
+const PaperTitle = styled.h3`
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--dark);
   margin-bottom: 10px;
+`;
+
+const PaperAuthors = styled.p`
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 15px;
+`;
+
+const PaperAbstract = styled.p`
+  font-size: 16px;
   line-height: 1.6;
+  color: #555;
+  margin-bottom: 15px;
+`;
+
+const PaperLink = styled.a`
+  display: inline-block;
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  
+  &:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+  }
+`;
+
+const CommunitySection = styled.div`
+  margin-top: 60px;
+`;
+
+const Button = styled.a`
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: var(--primary);
+  color: white;
+  text-decoration: none;
+  border-radius: var(--border-radius-sm);
+  font-weight: 600;
+  text-align: center;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+  
+  &:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(46, 204, 113, 0.2);
+  }
 `;
 
 const LearnMorePage = () => {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: { 
-      opacity: 1,
-      transition: { 
-        staggerChildren: 0.2,
-        delayChildren: 0.3
-      }
+  const [activeQuestion, setActiveQuestion] = React.useState(null);
+  
+  const toggleQuestion = (index) => {
+    if (activeQuestion === index) {
+      setActiveQuestion(null);
+    } else {
+      setActiveQuestion(index);
     }
   };
   
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: { 
-      y: 0, 
-      opacity: 1,
-      transition: { duration: 0.5 }
+  const resources = [
+    {
+      icon: "📚",
+      title: "Green Software Foundation",
+      description: "An organization dedicated to creating a trusted ecosystem of people, standards, tooling, and best practices for building green software.",
+      link: "https://greensoftware.foundation/",
+    },
+    {
+      icon: "🌱",
+      title: "Principles of Green Software Engineering",
+      description: "A core set of competencies needed to define, build, and run sustainable software applications.",
+      link: "https://learn.greensoftware.foundation/",
+    },
+    {
+      icon: "📏",
+      title: "Software Carbon Intensity Specification",
+      description: "A methodology for calculating the carbon emissions of software systems to help reduce their environmental impact.",
+      link: "https://github.com/Green-Software-Foundation/sci",
+    },
+    {
+      icon: "🔍",
+      title: "CodeCarbon",
+      description: "A Python package that estimates and tracks carbon emissions from computing, enabling developers to measure their carbon footprint.",
+      link: "https://codecarbon.io/",
+    },
+    {
+      icon: "💻",
+      title: "Green Coding Berlin",
+      description: "Research project focused on measuring and reducing the energy consumption of software and websites.",
+      link: "https://www.green-coding.berlin/",
+    },
+    {
+      icon: "📊",
+      title: "Sustainable Web Design",
+      description: "Guidelines and best practices for creating websites with a minimal carbon footprint.",
+      link: "https://sustainablewebdesign.org/",
     }
-  };
-
+  ];
+  
+  const faqs = [
+    {
+      question: "What does 'green code' actually mean?",
+      answer: "Green code refers to software that is designed and implemented to consume as little energy as possible while still delivering the required functionality. This includes optimizing algorithms, reducing computational complexity, minimizing network and storage operations, and generally being resource-efficient. The goal is to reduce the carbon footprint associated with running the software."
+    },
+    {
+      question: "How significant is the environmental impact of software?",
+      answer: "The environmental impact of software is substantial and growing. Information and Communication Technology (ICT) accounts for approximately 2-3% of global carbon emissions, roughly equivalent to the aviation industry. Within this, software efficiency directly influences energy consumption in data centers, user devices, and network infrastructure. By some estimates, inefficient software design can increase energy use by 10-90% for the same functionality."
+    },
+    {
+      question: "What programming languages are the most energy-efficient?",
+      answer: "Research has shown that compiled languages like C, C++, and Rust are generally more energy-efficient than interpreted languages like Python or JavaScript. However, the efficiency also depends greatly on how the code is written and the specific use case. For example, a well-optimized Python application using efficient libraries might consume less energy than a poorly written C++ program. At GreenCode AI, we focus on improving code efficiency regardless of language."
+    },
+    {
+      question: "Can AI models themselves be sustainable?",
+      answer: "AI models, especially large ones like StarCoder, do have a significant carbon footprint during training. However, this is a one-time cost that can be amortized across all users of the model. By helping developers write more efficient code, these models can potentially offset their training emissions many times over. At GreenCode AI, we use efficient fine-tuning approaches and choose models with a reasonable parameter count to balance capability and efficiency."
+    },
+    {
+      question: "How do I measure the carbon footprint of my code?",
+      answer: "There are several tools available for measuring the carbon footprint of your code. CodeCarbon is a Python package that can track emissions during code execution. The Green Software Foundation's Software Carbon Intensity (SCI) specification provides a methodology for calculating emissions. Cloud providers also offer sustainability calculators for services. GreenCode AI incorporates these tools to provide emissions estimates for your code."
+    },
+    {
+      question: "Does green code mean sacrificing performance or features?",
+      answer: "Not at all! In fact, green code often aligns perfectly with high-performance code since both aim to use computational resources efficiently. By reducing unnecessary operations, optimizing algorithms, and avoiding waste, you can create software that is both faster and more energy-efficient. GreenCode AI specifically looks for optimizations that maintain or improve functionality while reducing energy consumption."
+    }
+  ];
+  
+  const papers = [
+    {
+      title: "Energy Efficiency Across Programming Languages: How Do Energy, Time, and Memory Relate?",
+      authors: "Rui Pereira, Marco Couto, Francisco Ribeiro, Rui Rua, Jácome Cunha, João Paulo Fernandes, and João Saraiva",
+      abstract: "This paper presents a study of the runtime, memory usage, and energy consumption of twenty-seven well-known programming languages. The results show that compiled languages tend to be more energy-efficient than interpreted ones, but with significant variance within each group.",
+      link: "https://greenlab.di.uminho.pt/wp-content/uploads/2017/10/sleFinal.pdf"
+    },
+    {
+      title: "Green AI",
+      authors: "Roy Schwartz, Jesse Dodge, Noah A. Smith, and Oren Etzioni",
+      abstract: "The paper argues for making efficiency a more central focus of AI research, alongside accuracy. The authors propose reporting the 'Red AI' metric (compute budget) alongside traditional performance metrics, and highlight the environmental and inclusivity benefits of prioritizing efficient models.",
+      link: "https://arxiv.org/abs/1907.10597"
+    },
+    {
+      title: "Carbon Emissions and Large Neural Network Training",
+      authors: "David Patterson, Joseph Gonzalez, Quoc Le, Chen Liang, Lluis-Miquel Munguia, Daniel Rothchild, David So, Maud Texier, and Jeff Dean",
+      abstract: "This paper provides a methodology for measuring the carbon emissions of training large neural networks. It demonstrates that thoughtful choices in model architecture, hardware, and data center location can reduce training emissions by up to 100-1000x.",
+      link: "https://arxiv.org/abs/2104.10350"
+    }
+  ];
+  
   return (
     <LearnMoreContainer>
-      <motion.h1 
+      <PageTitle
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}
-        style={{ 
-          fontSize: '42px', 
-          marginBottom: '40px', 
-          textAlign: 'center',
-          color: 'var(--dark)',
-          fontWeight: '800'
-        }}
       >
-        Learn More About Green AI & Sustainable Coding
-      </motion.h1>
-
-      <motion.div
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
+        Learn More
+      </PageTitle>
+      
+      <PageDescription
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.7, delay: 0.2 }}
       >
-        <SectionContainer variants={itemVariants}>
-          <SectionTitle>The Environmental Impact of AI & Software</SectionTitle>
-          <Paragraph>
-            The rapid advancement of artificial intelligence comes with a considerable and often overlooked environmental cost. According to research from the <a href="https://arxiv.org/abs/1907.10597" target="_blank" rel="noopener noreferrer">Green AI paper</a> by Schwartz et al. (2019), the computations required for deep learning research have been <Bold>doubling every few months</Bold>, leading to an estimated <Bold>300,000× increase in compute from 2012 to 2018</Bold>.
-          </Paragraph>
-          <Paragraph>
-            Training a single large AI model can emit as much as <Highlight>284 tonnes of CO₂</Highlight> — approximately five times the lifetime emissions of an average car. For perspective, OpenAI's GPT-3 training is estimated to have consumed around 1,287 MWh of electricity, resulting in about 552 tonnes of CO₂.
-          </Paragraph>
-          <Quote>
-            "The relentless pursuit of state-of-the-art results and ever-larger models has created a technology that, while impressive in its capabilities, may be unnecessarily costly to the environment." — Schwartz et al., Green AI (2019)
-          </Quote>
-          <Paragraph>
-            Beyond the training phase, consider that these models are then deployed to generate code that itself may be inefficient, creating a dangerous multiplier effect:
-          </Paragraph>
-          <List>
-            <ListItem>AI models consume enormous energy during training</ListItem>
-            <ListItem>These models generate code that may be unnecessarily resource-intensive</ListItem>
-            <ListItem>This inefficient code runs on billions of devices worldwide</ListItem>
-            <ListItem>At scale, even small inefficiencies translate to significant energy waste</ListItem>
-          </List>
-          <Paragraph>
-            The environmental impact extends beyond carbon emissions. Data centers supporting AI services require substantial water for cooling systems and contribute to electronic waste through hardware replacement cycles. The total environmental footprint of the digital sector is estimated to exceed 2% of global emissions — on par with the aviation industry — and is growing rapidly.
-          </Paragraph>
-        </SectionContainer>
-
-        <SectionContainer variants={itemVariants}>
-          <SectionTitle>StarCoder: Transparent, Open-Source AI for Code</SectionTitle>
-          <Paragraph>
-            At the heart of Greencode AI is <a href="https://huggingface.co/bigcode/starcoder" target="_blank" rel="noopener noreferrer">StarCoder</a>, an open-source Large Language Model (LLM) specifically designed for code understanding and generation. Unlike many closed-source alternatives, StarCoder was developed with transparency and ethics as core principles.
-          </Paragraph>
-          <SubsectionTitle>What Makes StarCoder Special?</SubsectionTitle>
-          <List>
-            <ListItem><Bold>Size and Capability</Bold>: With 15.5 billion parameters and an 8,000-token context window, StarCoder can understand and generate code across 80+ programming languages</ListItem>
-            <ListItem><Bold>Training Data Transparency</Bold>: Trained on 1 trillion tokens from permissively licensed code with proper attribution</ListItem>
-            <ListItem><Bold>Ethical Approach</Bold>: Filtered out sensitive information and personally identifiable data during training</ListItem>
-            <ListItem><Bold>Responsible License</Bold>: Released under the BigCode OpenRAIL-M license, which promotes ethical AI use</ListItem>
-            <ListItem><Bold>Community Governance</Bold>: Developed by the BigCode initiative with 600+ community members</ListItem>
-            <ListItem><Bold>Environmental Consideration</Bold>: Training footprint of ~17 tonnes CO₂, far less than comparable closed models</ListItem>
-          </List>
-          <Paragraph>
-            StarCoder's performance is competitive with similar commercial models. According to its technical report, <Bold>"StarCoderBase outperforms every prior open-code model for multi-language coding and matches or outperforms the OpenAI code-cushman-001 model."</Bold> This means we can achieve excellent code optimization without relying on black-box proprietary systems.
-          </Paragraph>
-          <SubsectionTitle>Why Choose an Open Model?</SubsectionTitle>
-          <Paragraph>
-            Using an open-source model like StarCoder for Greencode AI brings significant advantages:
-          </Paragraph>
-          <List>
-            <ListItem><Bold>Transparency</Bold>: You can see exactly how it was trained and what data influenced its suggestions</ListItem>
-            <ListItem><Bold>Trust</Bold>: No black-box decision making — every suggestion can be traced and explained</ListItem>
-            <ListItem><Bold>Community Improvement</Bold>: The model benefits from a diverse community of contributors</ListItem>
-            <ListItem><Bold>Sustainability Tracking</Bold>: Environmental impact is openly documented, unlike most closed models</ListItem>
-            <ListItem><Bold>Adaptation Potential</Bold>: The model can be fine-tuned specifically for energy-efficient code patterns</ListItem>
-          </List>
-          <Paragraph>
-            This transparency aligns perfectly with our mission to help developers write more sustainable code. You shouldn't have to trust a black box to make your code greener — you should understand why and how optimizations work.
-          </Paragraph>
-        </SectionContainer>
-
-        <SectionContainer variants={itemVariants}>
-          <SectionTitle>Green Software Engineering Principles</SectionTitle>
-          <Paragraph>
-            Greencode AI's approach is grounded in the principles of Green Software Engineering, a discipline focused on designing, building, and running applications in ways that reduce energy consumption and carbon emissions. The <a href="https://greensoftware.foundation/" target="_blank" rel="noopener noreferrer">Green Software Foundation</a> has established eight core principles that guide sustainable software development:
-          </Paragraph>
-          
-          <SubsectionTitle>1. Carbon Efficiency</SubsectionTitle>
-          <Paragraph>
-            Carbon efficiency involves emitting the least amount of carbon possible for each unit of work. This means optimizing code to perform the same functions with fewer computational resources, which directly translates to reduced energy consumption and lower emissions.
-          </Paragraph>
-          <Paragraph>
-            <Bold>Example</Bold>: Replacing a bubble sort algorithm (O(n²)) with a more efficient merge sort (O(n log n)) can significantly reduce computation time and energy for large datasets.
-          </Paragraph>
-          
-          <SubsectionTitle>2. Energy Efficiency</SubsectionTitle>
-          <Paragraph>
-            Energy efficiency focuses on using the least amount of energy to perform a task. In software terms, this means writing code that minimizes CPU, memory, storage, and network usage while still delivering the required functionality.
-          </Paragraph>
-          <Paragraph>
-            <Bold>Example</Bold>: Using list comprehensions in Python instead of traditional loops can reduce energy consumption by up to 20%, as they're optimized internally by the interpreter.
-          </Paragraph>
-          
-          <SubsectionTitle>3. Carbon Awareness</SubsectionTitle>
-          <Paragraph>
-            Carbon awareness involves considering the carbon intensity of energy sources when running software. The same code running in different locations or at different times can have vastly different carbon impacts based on the energy mix powering the data center.
-          </Paragraph>
-          <Paragraph>
-            <Bold>Example</Bold>: Scheduling non-time-sensitive batch processing jobs to run during periods of higher renewable energy availability can reduce their carbon footprint without code changes.
-          </Paragraph>
-          
-          <SubsectionTitle>4. Hardware Efficiency</SubsectionTitle>
-          <Paragraph>
-            Hardware efficiency means building applications that work well on hardware that lasts longer and uses less materials. This principle considers the embodied carbon in devices and aims to reduce the need for frequent hardware replacements.
-          </Paragraph>
-          <Paragraph>
-            <Bold>Example</Bold>: Optimizing an application to run efficiently on older hardware can extend the useful life of devices, reducing electronic waste and the carbon cost of manufacturing new equipment.
-          </Paragraph>
-          
-          <SubsectionTitle>5. Energy Proportionality</SubsectionTitle>
-          <Paragraph>
-            Energy proportionality aims to ensure that the energy consumed by a system is proportional to the work being done. Ideal systems use nearly zero energy when idle and gradually increase energy consumption as utilization increases.
-          </Paragraph>
-          <Paragraph>
-            <Bold>Example</Bold>: Implementing proper sleep modes for background services instead of using busy-wait loops can significantly reduce energy consumption during periods of low activity.
-          </Paragraph>
-          
-          <SubsectionTitle>Additional Resources</SubsectionTitle>
-          <ResourceCard whileHover={{ y: -5 }}>
-            <ResourceLink href="https://greensoftware.foundation/" target="_blank" rel="noopener noreferrer">
-              <ResourceTitle>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2ecc71" strokeWidth="2">
-                  <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
-                  <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
-                </svg>
-                Green Software Foundation
-              </ResourceTitle>
-              <ResourceDescription>
-                A non-profit dedicated to creating a trusted ecosystem of people, standards, tooling, and best practices for green software development.
-              </ResourceDescription>
-              <ResourceMeta>
-                <span>Official organization website</span>
-                <ResourceTags>
-                  <ResourceTag>Standards</ResourceTag>
-                  <ResourceTag>Community</ResourceTag>
-                </ResourceTags>
-              </ResourceMeta>
-            </ResourceLink>
+        Explore resources, research, and tools to deepen your understanding of sustainable software development and the environmental impact of code.
+      </PageDescription>
+      
+      <SectionTitle
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        Green Software Resources
+      </SectionTitle>
+      
+      <ResourcesGrid>
+        {resources.map((resource, index) => (
+          <ResourceCard
+            key={index}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 * index }}
+          >
+            <ResourceImage>
+              {resource.icon}
+            </ResourceImage>
+            <ResourceContent>
+              <ResourceTitle>{resource.title}</ResourceTitle>
+              <ResourceDescription>{resource.description}</ResourceDescription>
+              <ResourceLink href={resource.link} target="_blank" rel="noopener noreferrer">
+                Visit Resource →
+              </ResourceLink>
+            </ResourceContent>
           </ResourceCard>
-          
-          <ResourceCard whileHover={{ y: -5 }}>
-            <ResourceLink href="https://arxiv.org/abs/1907.10597" target="_blank" rel="noopener noreferrer">
-              <ResourceTitle>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2ecc71" strokeWidth="2">
-                  <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-                  <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-                </svg>
-                Green AI Paper – Schwartz et al. (2019)
-              </ResourceTitle>
-              <ResourceDescription>
-                This seminal paper coined the term "Green AI" and argues for a shift toward more energy-efficient artificial intelligence research and applications.
-              </ResourceDescription>
-              <ResourceMeta>
-                <span>Academic research paper</span>
-                <ResourceTags>
-                  <ResourceTag>Research</ResourceTag>
-                  <ResourceTag>AI</ResourceTag>
-                </ResourceTags>
-              </ResourceMeta>
-            </ResourceLink>
-          </ResourceCard>
-          
-          <ResourceCard whileHover={{ y: -5 }}>
-            <ResourceLink href="https://github.com/Green-Software-Foundation/software_carbon_intensity" target="_blank" rel="noopener noreferrer">
-              <ResourceTitle>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2ecc71" strokeWidth="2">
-                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                </svg>
-                Software Carbon Intensity Specification (SCI)
-              </ResourceTitle>
-              <ResourceDescription>
-                The SCI provides a methodology for calculating the carbon impact of software applications, allowing developers to measure and improve their sustainability.
-              </ResourceDescription>
-              <ResourceMeta>
-                <span>GitHub repository</span>
-                <ResourceTags>
-                  <ResourceTag>Specification</ResourceTag>
-                  <ResourceTag>Metrics</ResourceTag>
-                </ResourceTags>
-              </ResourceMeta>
-            </ResourceLink>
-          </ResourceCard>
-          
-          <ResourceCard whileHover={{ y: -5 }}>
-            <ResourceLink href="https://huggingface.co/bigcode/starcoder" target="_blank" rel="noopener noreferrer">
-              <ResourceTitle>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2ecc71" strokeWidth="2">
-                  <path d="M8.36 5.08c-1.03-.43-2.18-.69-3.36-.69v0c-1.18 0-2.33.26-3.36.69"></path>
-                  <path d="M8.36 5.08A4.77 4.77 0 0 0 10 9a4.77 4.77 0 0 1 1.64 3.92c0 1.15.42 2.3 1.12 3.08"></path>
-                  <path d="M1.64 5.08A4.77 4.77 0 0 1 0 9a4.77 4.77 0 0 0-1.64 3.92c0 1.15-.42 2.3-1.12 3.08"></path>
-                  <path d="M12.76 16H11.24"></path>
-                  <path d="M22.38 17.88V4.12a2 2 0 0 0-2.74-1.84L11.18 7.4c-.45.22-.82.65-.82 1.16v7c0 .51.37.94.82 1.16l8.46 5.12a2 2 0 0 0 2.74-1.84"></path>
-                </svg>
-                StarCoder Model
-              </ResourceTitle>
-              <ResourceDescription>
-                StarCoder is the open-source Large Language Model that powers Greencode AI's code optimization suggestions.
-              </ResourceDescription>
-              <ResourceMeta>
-                <span>Hugging Face model page</span>
-                <ResourceTags>
-                  <ResourceTag>AI Model</ResourceTag>
-                  <ResourceTag>Open Source</ResourceTag>
-                </ResourceTags>
-              </ResourceMeta>
-            </ResourceLink>
-          </ResourceCard>
-          
-          <ResourceCard whileHover={{ y: -5 }}>
-            <ResourceLink href="https://mlco2.github.io/codecarbon/" target="_blank" rel="noopener noreferrer">
-              <ResourceTitle>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2ecc71" strokeWidth="2">
-                  <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
-                </svg>
-                CodeCarbon Project
-              </ResourceTitle>
-              <ResourceDescription>
-                CodeCarbon is an emissions tracking tool that estimates the carbon footprint of computing, helping developers understand and reduce their code's environmental impact.
-              </ResourceDescription>
-              <ResourceMeta>
-                <span>Open-source tool</span>
-                <ResourceTags>
-                  <ResourceTag>Measurement</ResourceTag>
-                  <ResourceTag>Tracking</ResourceTag>
-                </ResourceTags>
-              </ResourceMeta>
-            </ResourceLink>
-          </ResourceCard>
-        </SectionContainer>
-
-        <SectionContainer variants={itemVariants}>
-          <SectionTitle>The Future of Sustainable AI & Development</SectionTitle>
-          <Paragraph>
-            The intersection of artificial intelligence and environmental sustainability represents both a challenge and an opportunity. As AI becomes increasingly integrated into the software development lifecycle, we have a responsibility to ensure this technology operates efficiently and with minimal environmental harm.
-          </Paragraph>
-          <Paragraph>
-            Looking ahead, several emerging trends will shape the future of sustainable AI and development:
-          </Paragraph>
-          <List>
-            <ListItem><Bold>Energy-Aware AI Models</Bold>: Future AI architectures will likely incorporate energy consumption as an explicit optimization target during training</ListItem>
-            <ListItem><Bold>Specialized Efficient Hardware</Bold>: Purpose-built chips optimized for specific AI tasks will continue to improve the FLOPS/watt ratio</ListItem>
-            <ListItem><Bold>Embedded Sustainability Metrics</Bold>: Development environments will integrate real-time carbon and energy feedback directly into the coding workflow</ListItem>
-            <ListItem><Bold>Regulatory Frameworks</Bold>: Emerging policies may require software companies to report carbon emissions and meet efficiency standards</ListItem>
-            <ListItem><Bold>Green AI Certifications</Bold>: Third-party certification programs for environmentally responsible AI development and deployment will gain prominence</ListItem>
-          </List>
-          <Paragraph>
-            Greencode AI is aligned with these future directions. Our roadmap includes features like IDE plugins for real-time optimization suggestions, GitHub Actions for automated sustainability checks in CI/CD pipelines, and team collaboration tools to set and track organization-wide sustainability goals.
-          </Paragraph>
-          <Quote>
-            "The most sustainable line of code is the one you don't write." This principle, echoing the famous architecture maxim about unbuilt buildings, reminds us that optimization begins with simplicity and necessity.
-          </Quote>
-          <Paragraph>
-            By making sustainable coding accessible and integrated into everyday development workflows, we aim to create a future where energy efficiency is a standard consideration in software engineering, just as performance and security are today.
-          </Paragraph>
-          <Paragraph>
-            Join us in this mission by trying Greencode AI, contributing to our open-source project, or simply spreading awareness about sustainable coding practices within your organization.
-          </Paragraph>
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', marginTop: '40px' }}>
-            <a href="/optimize" className="btn" style={{ textDecoration: 'none' }}>Try Greencode AI</a>
-            <a href="https://github.com/sambett/greencode-ai" className="btn btn-secondary" style={{ textDecoration: 'none' }}>View on GitHub</a>
-          </div>
-        </SectionContainer>
-      </motion.div>
+        ))}
+      </ResourcesGrid>
+      
+      <ResearchSection>
+        <SectionTitle
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          Research Papers
+        </SectionTitle>
+        
+        {papers.map((paper, index) => (
+          <Paper
+            key={index}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 * index }}
+          >
+            <PaperTitle>{paper.title}</PaperTitle>
+            <PaperAuthors>{paper.authors}</PaperAuthors>
+            <PaperAbstract>{paper.abstract}</PaperAbstract>
+            <PaperLink href={paper.link} target="_blank" rel="noopener noreferrer">
+              Read Paper →
+            </PaperLink>
+          </Paper>
+        ))}
+      </ResearchSection>
+      
+      <FAQ>
+        <SectionTitle
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          Frequently Asked Questions
+        </SectionTitle>
+        
+        {faqs.map((faq, index) => (
+          <FAQItem
+            key={index}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 * index }}
+          >
+            <FAQQuestion onClick={() => toggleQuestion(index)}>
+              {faq.question}
+              <span>{activeQuestion === index ? '−' : '+'}</span>
+            </FAQQuestion>
+            
+            <FAQAnswer
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ 
+                height: activeQuestion === index ? 'auto' : 0,
+                opacity: activeQuestion === index ? 1 : 0
+              }}
+              transition={{ duration: 0.3 }}
+            >
+              <p>{faq.answer}</p>
+            </FAQAnswer>
+          </FAQItem>
+        ))}
+      </FAQ>
+      
+      <CommunitySection>
+        <SectionTitle
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          Join the Conversation
+        </SectionTitle>
+        
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          style={{ marginBottom: '20px', lineHeight: '1.6' }}
+        >
+          The field of green software engineering is growing rapidly. Connect with other developers, researchers, and organizations working on sustainable software solutions. Share your experiences, ask questions, and contribute to building a greener future for technology.
+        </motion.p>
+        
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          style={{ display: 'flex', justifyContent: 'center', gap: '20px', flexWrap: 'wrap' }}
+        >
+          <Button href="https://github.com/sambett/greencode-ai" target="_blank" rel="noopener noreferrer">
+            Contribute on GitHub
+          </Button>
+          <Button href="/contact" style={{ background: 'white', color: 'var(--primary)', border: '2px solid var(--primary)' }}>
+            Contact Our Team
+          </Button>
+        </motion.div>
+      </CommunitySection>
     </LearnMoreContainer>
   );
 };

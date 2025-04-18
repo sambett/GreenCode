@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const ImprovedHero = () => {
   const [activeSlide, setActiveSlide] = useState(0);
@@ -341,12 +342,16 @@ const ImprovedHero = () => {
             <h1>{slides[activeSlide].title}</h1>
             <p>{slides[activeSlide].description}</p>
             <div className="hero-buttons">
-              <motion.a href="/optimize" className="btn btn-pulse" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                Try GreenCode AI
-              </motion.a>
-              <motion.a href="/docs" className="btn btn-secondary" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                Learn More
-              </motion.a>
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Link to="/optimize" className="btn btn-pulse">
+                  Try GreenCode AI
+                </Link>
+              </motion.div>
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Link to="/learn-more" className="btn btn-secondary">
+                  Learn More
+                </Link>
+              </motion.div>
             </div>
           </motion.div>
         </AnimatePresence>

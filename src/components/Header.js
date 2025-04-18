@@ -141,44 +141,34 @@ function Header() {
       
       <Nav $isOpen={isMenuOpen}>
         <NavItem 
-          href="/" 
-          className={isActive('/')} 
-          as={motion.a} 
+          as={motion.div} 
           whileHover={{ y: -2 }}
         >
-          Home
+          <Link to="/" className={isActive('/')}>Home</Link>
         </NavItem>
         <NavItem 
-          href="/features" 
-          className={isActive('/features')} 
-          as={motion.a} 
+          as={motion.div} 
           whileHover={{ y: -2 }}
         >
-          Features
+          <Link to="/features" className={isActive('/features')}>Features</Link>
         </NavItem>
         <NavItem 
-          href="/docs" 
-          className={isActive('/docs')} 
-          as={motion.a} 
+          as={motion.div} 
           whileHover={{ y: -2 }}
         >
-          Docs
+          <Link to="/learn-more" className={isActive('/learn-more')}>Docs</Link>
         </NavItem>
         <NavItem 
-          href="/about" 
-          className={isActive('/about')} 
-          as={motion.a} 
+          as={motion.div} 
           whileHover={{ y: -2 }}
         >
-          About
+          <Link to="/about" className={isActive('/about')}>About</Link>
         </NavItem>
         <NavItem 
-          href="/contact" 
-          className={isActive('/contact')} 
-          as={motion.a} 
+          as={motion.div} 
           whileHover={{ y: -2 }}
         >
-          Contact
+          <Link to="/contact" className={isActive('/contact')}>Contact</Link>
         </NavItem>
       </Nav>
     </HeaderStyled>
