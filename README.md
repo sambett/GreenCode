@@ -24,7 +24,7 @@ npm start
 
 ## Connecting to Backend
 
-By default, the frontend connects to a backend at `http://localhost:5000`. You can change this by setting the `REACT_APP_API_URL` environment variable.
+By default, the frontend connects to a backend at `http://127.0.0.1:5000`. You can change this by setting the `REACT_APP_API_URL` environment variable.
 
 ## Deployment
 
