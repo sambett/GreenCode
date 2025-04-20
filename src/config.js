@@ -8,15 +8,17 @@ const config = {
   api: {
     // Base URL for API requests
     // Use environment variable if available, otherwise fallback to development URL
-    baseUrl: process.env.REACT_APP_API_URL || 'http://localhost:5000',
+    baseUrl: process.env.REACT_APP_API_URL || 'http://127.0.0.1:5000',
     
-    // API endpoints - Updated for ChatGPT backend
+    // API endpoints
     endpoints: {
       analyze: '/analyze',
-      health: '/health'
+      health: '/health',
+      models: '/models',
+      clearCache: '/clear-cache'
     },
     
-    // Request timeout in milliseconds (30 seconds for ChatGPT API)
+    // Request timeout in milliseconds (30 seconds)
     timeout: 30000
   },
 
@@ -32,12 +34,17 @@ const config = {
     useRealApi: true // Always use real API
   },
   
-  // Model configurations - Updated with StarCoder models
+  // Model configurations
   models: {
+    mock: {
+      key: "mock",
+      name: "Mock Data (Offline Mode)",
+      description: "Uses simulated data for offline testing"
+    },
     huggingface: {
       key: "huggingface",
-      name: "Hugging Face API",
-      description: "Uses StarCoder model via Hugging Face Inference API"
+      name: "Hugging Face Phi-2",
+      description: "Uses Microsoft Phi-2 model via Hugging Face Inference API"
     },
     openai: {
       key: "openai",
