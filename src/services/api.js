@@ -32,29 +32,37 @@ export const analyzeCode = async (code, options = {}) => {
     // Otherwise use real API
     console.log('Using real API for code analysis');
     console.log(`Making API request to ${config.api.baseUrl}${config.api.endpoints.analyze}`);
+    console.log('Code length:', code.length, 'Model:', model, 'Context:', context);
     
     // Prepare request URL
     const url = `${config.api.baseUrl}${config.api.endpoints.analyze}`;
+    console.log('Full URL:', url);
     
     // Set up request with timeout
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), config.api.timeout);
     
     // Make API call
+    console.log('About to send fetch request');
+    const requestBody = { 
+      code,
+      advanced,
+      context,
+      variants: config.features.showVariants,
+      model: model // Include the selected model
+    };
+    console.log('Request body:', JSON.stringify(requestBody).substring(0, 100) + '...');
+    
     const response = await fetch(url, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ 
-        code,
-        advanced,
-        context,
-        variants: config.features.showVariants,
-        model: model // Include the selected model
-      }),
+      body: JSON.stringify(requestBody),
       signal: controller.signal
     });
+    
+    console.log('Received response:', response.status, response.statusText);
     
     // Clear timeout
     clearTimeout(timeoutId);
@@ -70,15 +78,19 @@ export const analyzeCode = async (code, options = {}) => {
     }
     
     // Parse and return the response data
-    return await response.json();
+    const responseData = await response.json();
+    console.log('Parsed response data successfully');
+    return responseData;
   } catch (error) {
     if (error.name === 'AbortError') {
       console.log('Request timeout - falling back to mock data');
     } else {
       console.error('API Error:', error);
+      console.error('Error details:', error.message);
+      console.error('Error stack:', error.stack);
     }
     
-    // Fall back to mock data for any error
+    console.log('Falling back to mock data due to error');
     return getMockAnalysisResults(code, context);
   }
 };
